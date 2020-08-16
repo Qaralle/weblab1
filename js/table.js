@@ -10,10 +10,6 @@ function trytoparse(str) {
 function linecreate(data,i) {
 	let line = ""
 
-	if (data[i].X.toString().length>=10){
-		data[i].X=String(Number(data[i].X).toExponential(2))
-
-	}
 
 	line += "<tr>"
 	line += "<td>"

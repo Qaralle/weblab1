@@ -49,7 +49,6 @@ form span{ /*селектор дочерних элементов */
     margin-right: 20px;
     margin-top: 20px;
 }
-
 .hint{
 	font-size: 15px;
 	font-weight: normal;
@@ -70,11 +69,12 @@ table.result{
 	border-collapse: collapse;
 	text-align:center;
 	font-size: 15px;
-	font-weight:bold;
+	table-layout: fixed;
 } 
 table.result td{
 	padding: auto;
 	border: 1px solid white;
+	overflow: auto;
 
 }
 table.result tr {
