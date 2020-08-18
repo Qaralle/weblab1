@@ -13,33 +13,33 @@ function linecreate(data,i) {
 
 	line += "<tr>"
 	line += "<td>"
-	line += data[i][X]
+	line += data[i].X
 	line += "</td>"
 	line += "<td>"
-	line += data[i][Y]
+	line += data[i].Y
 	line += "</td>"
 	line += "<td>"
-	line += data[i][R]
+	line += data[i].R
 	line += "</td>"
 	line += "<td>"
-	line += data[i][Result]
+	line += data[i].Result
 	line += "</td>"
 	line += "<td>"
-	line += data[i][answer_time]
+	line += data[i].answer_time
 	line += "</td>"
 	line += "<td>"
-	line += data[i][date_time]
+	line += data[i].date_time
 	line += "</td>"
 	line += "</tr>"
 	return line;
 }
 
 function draw_table(data){
-	data=JSON.stringify(data)
 	let body = $("#table_body").eq(0)
 	let line = ""
 	if (trytoparse(data) && data != ""){
 
+		data=JSON.parse(data)
 
 		for (let i = 0; i <= data.length - 1; i++) {
 
@@ -54,8 +54,6 @@ function draw_table(data){
 
 function update_table(data){
 
-	data=JSON.stringify(data)
-
 	let body = $("#table_body").eq(0)
 
 	let line = ""
@@ -63,6 +61,7 @@ function update_table(data){
 
 	if (trytoparse(data)){
 
+		data=JSON.parse(data)
 		line=linecreate(data,data.length - 1)
 		body.append(line)
 
@@ -73,9 +72,9 @@ function update_table(data){
 			deleted=data.splice(0,1)
 
 			console.log("i deleted the first element, current length is:"+data.length)
-			console.log("deleted element:"+deleted)
+			console.log("deleted element:"+JSON.stringify(deleted))
 
-			newdata=data.replace("[","")
+			newdata=JSON.stringify(data).replace("[","")
 			newdata=newdata.replace("]","")
 
 

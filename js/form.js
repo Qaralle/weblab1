@@ -23,6 +23,14 @@ var handler = function (){
 }
 
 
+function isANumber( n ) {
+    var numStr = /^[\-]?\d*\.?\d+(?:[Ee][\+\-]?\d+)?$|\.$/;
+    return numStr.test(n);
+}
+
+
+
+
 
 $(function () {
 	$("[flag='choice']").bind('click', handler)
@@ -40,11 +48,11 @@ $(function () {
 function validateValue(inp){
     let val = parseFloat(inp.value.replace(',','.'))
 
-    if (isNaN(val) || inp.value.replace(',','.').split('.').length>2 || !isFinite(inp.value.replace(',','.'))){
+    if (isNaN(val) || inp.value.replace(',','.').split('.').length>2 || !isANumber(inp.value.replace(',','.'))){
 
         return false
     }
-  
+   ``
  
     return val <= 5 && val >= -5
 
