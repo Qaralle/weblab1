@@ -3,6 +3,7 @@ var id
 var handler = function (){
 	if ($(this).attr("flag")=="selected"){
 
+
 		let selected_id=$("[flag='selected']").attr("id")
 		$(this).attr("value", selected_id)
 		$(this).attr("flag","choice")
@@ -28,10 +29,6 @@ function isANumber( n ) {
     return numStr.test(n);
 }
 
-
-
-
-
 $(function () {
 	$("[flag='choice']").bind('click', handler)
 	validate();
@@ -52,8 +49,7 @@ function validateValue(inp){
 
         return false
     }
-   ``
- 
+
     return val <= 5 && val >= -5
 
 }
@@ -75,12 +71,10 @@ function fsubmit(){
 	$.post({
 			url: "test.php",
 			data: $('[serialize="true"]').serialize()+"&Y="+id,
-			success: function( result )
-			{		
+			success: result =>{		
 				if(result){
 					
-					let data = Cookies.get("data")
-					update_table("["+data+"]")
+					update_table("["+Cookies.get("data")+"]")
 
 				}else{
 					alert("Не трогай клиент!")

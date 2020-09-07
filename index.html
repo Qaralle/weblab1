@@ -1,84 +1,87 @@
-<head>
-	<meta charset="utf-8">
-	<title>test</title>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
-	<script type="text/javascript" src="js/table.js"></script>
-	<script type="text/javascript" src="js/form.js"></script>
+<!DOCTYPE html> 
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>test</title>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+		<script type="text/javascript" src="js/table.js"></script>
+		<script type="text/javascript" src="js/form.js"></script>
 
-  	<link rel="stylesheet" type="text/css" href="main.css">
+	  	<link rel="stylesheet" type="text/css" href="main.css">
 
 
-</head>
+	</head>
 
-<body>
+	<body>
 
-	<div id="body_div">
-		<div id = "head_div" class="head">
-				<span>Антонов Максим Александрович, P3214</span>
-				<span>Вариант 2502</span>
-		</div>
-		
-		<div id="canvas_div">
+		<div id="body_div">
+			<div id = "head_div" class="head">
+					<span>Антонов Максим Александрович, P3214</span>
+					<span>Вариант 2502</span>
+			</div>
+			
+			<div id="canvas_div">
 
-			<canvas id="canvas" width="650" height="350">
-			</canvas>
-		</div>
+				<canvas id="canvas" width="650" height="350" position="centre">
+				</canvas>
+			</div>
 
-		<div id="form_div">
+			<div id="form_div">
 
-			<form name="testform" onsubmit="validate()">
-				<span class="letter">X</span>
-				<input serialize="true" id="first" name="X" type="text" oninput="validate()" onchange="validate()"><br />
-						  
-				<span class="letter">Y</span>
-				<input name="choice_button"  flag='choice' id="-4" type="button" value="-4" >
-				<input class="not-first-button" name="choice_button" flag='choice' id="-3" type="button" value="-3" >
-				<input class="not-first-button" name="choice_button" flag='choice' id="-2" type="button" value="-2" > 
-				<input class="not-first-button" name="choice_button" flag='choice' id="-1" type="button" value="-1" >
-				<input class="not-first-button" name="choice_button" flag='choice' id="0" type="button" value="0" >
-				<input class="not-first-button" name="choice_button" flag='choice' id="1" type="button" value="1" >
-				<input class="not-first-button" name="choice_button" flag='choice' id="2" type="button" value="2" >
-				<input class="not-first-button" name="choice_button" flag='choice' id="3" type="button" value="3" >
-				<input class="not-first-button" name="choice_button" flag='choice' id="4" type="button" value="4" ><br />
+				<form name="testform" onsubmit="validate()">
+					<span class="letter">X</span>
+					<input serialize="true" id="first" name="X" type="text" oninput="validate()" onchange="validate()"><br />
+							  
+					<span class="letter">Y</span>
+					<input name="choice_button"  flag='choice' id="-4" type="button" value="-4" >
+					<input class="not-first-button" name="choice_button" flag='choice' id="-3" type="button" value="-3" >
+					<input class="not-first-button" name="choice_button" flag='choice' id="-2" type="button" value="-2" > 
+					<input class="not-first-button" name="choice_button" flag='choice' id="-1" type="button" value="-1" >
+					<input class="not-first-button" name="choice_button" flag='choice' id="0" type="button" value="0" >
+					<input class="not-first-button" name="choice_button" flag='choice' id="1" type="button" value="1" >
+					<input class="not-first-button" name="choice_button" flag='choice' id="2" type="button" value="2" >
+					<input class="not-first-button" name="choice_button" flag='choice' id="3" type="button" value="3" >
+					<input class="not-first-button" name="choice_button" flag='choice' id="4" type="button" value="4" ><br />
+							
 						
-					
-				<span class="letter">R</span>
-				<input serialize="true" id="third" name="R" type="radio" value="1" checked> 1
-				<input class="not-first-radio" serialize="true" id="fourth" name="R"  type="radio" value="1.5" > 1.5
-				<input class="not-first-radio" serialize="true" id="fiveth" name="R"  type="radio" value="2" >2
-				<input class="not-first-radio" serialize="true" id="sixth" name="R"  type="radio" value="2.5" >2.5
-				<input class="not-first-radio" serialize="true" id="seventh" name="R"  type="radio" value="3" >3<br />
-						   
-				<input id="eighth" type="button" disabled="disabled"  value="you can send me!" onclick="fsubmit()">
+					<span class="letter">R</span>
+					<input serialize="true" id="third" name="R" type="radio" value="1" checked> 1
+					<input class="not-first-radio" serialize="true" id="fourth" name="R"  type="radio" value="1.5" > 1.5
+					<input class="not-first-radio" serialize="true" id="fiveth" name="R"  type="radio" value="2" >2
+					<input class="not-first-radio" serialize="true" id="sixth" name="R"  type="radio" value="2.5" >2.5
+					<input class="not-first-radio" serialize="true" id="seventh" name="R"  type="radio" value="3" >3<br />
+							   
+					<input id="eighth" type="button" disabled="disabled"  value="you can send me!" onclick="fsubmit()">
 
-			</form>
+				</form>
+			</div>
+			
+			<div id="hint_div">
+				<span class="hint">Кнопка активируется, если<br/>выбраны все параметры <br/> и X∈[-5;5]</span>
+			</div>
+
+			<div id="table_div">			
+				<table class="result">
+					<col width="50">
+	   				<col width="50">
+	   				<col width="50">
+	   				<col width="75">
+					<thead>
+						<td>X</td>
+						<td>Y</td>
+						<td>R</td>
+						<td>Result</td>
+						<td>Answer time</td>
+						<td>Date time</td>
+					</thead>
+					<tbody id="table_body">
+
+					</tbody>
+				</table>
+
+			</div>
 		</div>
-		
-		<div id="hint_div">
-			<span class="hint">Кнопка активируется, если<br/>выбраны все параметры <br/> и X∈[-5;5]</span>
-		</div>
-
-		<div id="table_div">			
-			<table class="result">
-				<col width="50">
-   				<col width="50">
-   				<col width="50">
-   				<col width="75">
-				<thead>
-					<td>X</td>
-					<td>Y</td>
-					<td>R</td>
-					<td>Result</td>
-					<td>Answer time</td>
-					<td>Date time</td>
-				</thead>
-				<tbody id="table_body">
-
-				</tbody>
-			</table>
-
-		</div>
-	</div>
-</body>
-<script type="text/javascript" src="js/canvas.js"></script>
+	</body>
+	<script type="text/javascript" src="js/canvas.js"></script>
+</html>

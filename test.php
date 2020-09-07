@@ -1,5 +1,5 @@
 <?php
-$start_time = microtime();
+$start_time = microtime(true);
 
 $X = $_POST['X'];
 $Y = $_POST['Y'];
@@ -41,7 +41,7 @@ if (filter_var($X, FILTER_VALIDATE_FLOAT) !== false and
 
 
 	$date_time= date('Y-m-d H:i:s');
-	$answer_time =  microtime() - $start_time;
+	$answer_time =  microtime(true) - $start_time;
 
 	
 	$answer="{\"X\": \"$X\", \"Y\":$Y, \"R\":$R,\"Result\": ";

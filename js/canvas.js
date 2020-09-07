@@ -144,11 +144,7 @@ function drawResult(x,y,R){
 	context.moveTo(context.canvas.width/2+x*dash_length,context.canvas.height/2-y*dash_length)
 	context.arc(context.canvas.width/2+x*dash_length,context.canvas.height/2-y*dash_length,4,0,2*Math.PI)
 	context.fill()
-
 }
-
-
-
 
 $(window).on("load",draw)
 $(window).resize(draw)

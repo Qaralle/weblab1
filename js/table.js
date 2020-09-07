@@ -1,4 +1,4 @@
-function trytoparse(str) {
+function trytoJSON(str) {
     try {
         JSON.parse(str);
     } catch (e) {
@@ -10,25 +10,37 @@ function trytoparse(str) {
 function linecreate(data,i) {
 	let line = ""
 
-
+	console.log(data[i].X)
 	line += "<tr>"
 	line += "<td>"
+	line += "<div id='cell'>"
 	line += data[i].X
+	line += "</div>"
 	line += "</td>"
 	line += "<td>"
+	line += "<div id='cell'>"
 	line += data[i].Y
+	line += "</div>"
 	line += "</td>"
 	line += "<td>"
+	line += "<div id='cell'>"
 	line += data[i].R
+	line += "</div>"
 	line += "</td>"
 	line += "<td>"
+	line += "<div id='cell'>"
 	line += data[i].Result
+	line += "</div>"
 	line += "</td>"
 	line += "<td>"
+	line += "<div id='cell'>"
 	line += data[i].answer_time
+	line += "</div>"
 	line += "</td>"
 	line += "<td>"
+	line += "<div id='cell'>"
 	line += data[i].date_time
+	line += "</div>"
 	line += "</td>"
 	line += "</tr>"
 	return line;
@@ -37,10 +49,9 @@ function linecreate(data,i) {
 function draw_table(data){
 	let body = $("#table_body").eq(0)
 	let line = ""
-	if (trytoparse(data) && data != ""){
+	if (trytoJSON(data) && data != ""){
 
 		data=JSON.parse(data)
-
 		for (let i = 0; i <= data.length - 1; i++) {
 
 
@@ -59,7 +70,7 @@ function update_table(data){
 	let line = ""
 
 
-	if (trytoparse(data)){
+	if (trytoJSON(data)){
 
 		data=JSON.parse(data)
 		line=linecreate(data,data.length - 1)
@@ -74,8 +85,7 @@ function update_table(data){
 			console.log("i deleted the first element, current length is:"+data.length)
 			console.log("deleted element:"+JSON.stringify(deleted))
 
-			newdata=JSON.stringify(data).replace("[","")
-			newdata=newdata.replace("]","")
+			newdata=JSON.stringify(data).replace("[","").replace("]","")
 
 
 			Cookies.set("data", newdata,{path: "/~s283809/test",sameSite:'lax'});
